@@ -6,6 +6,18 @@
 
 
 
+# CONTENT
+[HOW CODE WORK](https://github.com/KangFeeder090403/UTS-Pemrograman-Jaringan/blob/main/README.md#how-code-work)
+* [Penjelasan Server Side](https://github.com/KangFeeder090403/UTS-Pemrograman-Jaringan/blob/main/README.md#penjelasan)
+* [Penjelasan Client Side Side](
+https://github.com/KangFeeder090403/UTS-Pemrograman-Jaringan/blob/main/README.md#penjelasan-1)
+
+
+
+[CONTOH PENGGUNAAN](https://github.com/KangFeeder090403/UTS-Pemrograman-Jaringan/blob/main/README.md#contoh-penggunaan-)
+
+
+
 
 ## **Soal**
 
@@ -223,7 +235,7 @@ finally:
 
 # Contoh Penggunaan :
 
-1 Server.py dan 1 Client.py.
+# 1 Server.py dan 1 Client.py.
 
 Untuk menjalankannya cukup dengan `_Run Code_` Sever.py dan `_Run Python File In Dedicated Terminal_`
 
@@ -242,7 +254,7 @@ Keterangan :
 * Jika menebak warna dengan Salah maka akan mendapatkan nilai feedback 0 *
 
 
-1 Server.py dan 10 Client.py 
+# 1 Server.py dan 10 Client.py 
 
 Untuk menjalankan 1 server dan 10 Client dengan waktu bersamaan maka diperlukan kode script untuk menangani ini. Kode script nya cukup sederharna yaitu :
 
