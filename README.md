@@ -16,7 +16,7 @@ https://github.com/KangFeeder090403/UTS-Pemrograman-Jaringan/blob/main/README.md
 
 [CONTOH PENGGUNAAN](https://github.com/KangFeeder090403/UTS-Pemrograman-Jaringan/blob/main/README.md#contoh-penggunaan-)
 * [ 1 Server 1 Client](https://github.com/KangFeeder090403/UTS-Pemrograman-Jaringan/blob/main/README.md#1-serverpy-dan-1-clientpy)
-*  [ 1 Server 10 Client](https://github.com/KangFeeder090403/UTS-Pemrograman-Jaringan/blob/main/README.md#1-serverpy-dan-10-clientpy)
+*  [ TEST CASE 1 Server 10 Client ](https://github.com/KangFeeder090403/UTS-Pemrograman-Jaringan/blob/main/README.md#1-serverpy-dan-10-clientpy)
 
 
 
@@ -258,7 +258,7 @@ Keterangan :
 * Jika menebak warna dengan Salah maka akan mendapatkan nilai feedback 0 *
 
 
-# 1 Server.py dan 10 Client.py 
+# TEST CASE 1 Server.py dan 10 Client.py 
 
 Untuk menjalankan 1 server dan 10 Client dengan waktu bersamaan maka diperlukan kode script untuk menangani ini. Kode script nya cukup sederharna yaitu :
 
