@@ -7,6 +7,9 @@
 # CONTENT
 [HOW CODE WORK](https://github.com/KangFeeder090403/UTS-Pemrograman-Jaringan/tree/main?tab=readme-ov-file#how-code-work)
 
+- [Penjelasan Server.py](https://github.com/KangFeeder090403/UTS-Pemrograman-Jaringan/tree/main?tab=readme-ov-file#serverpy)
+
+
 
 
 ## **Soal**
@@ -70,6 +73,11 @@ while True:
 server_socket.close()
 ```
 
+
+`server_ip = "127.0.0.1"` dan `server server_port = 12345` digunakan untuk menyimpan ip dan port
+
+
+
 # Penjelasan
 ## Server.py
 
@@ -80,7 +88,7 @@ import threading # Import modul threading untuk membuat thread baru
 import random  # Import modul random untuk keperluan randomisasi
 import keyboard  # Import modul keyboard untuk deteksi input dari keyboard
 ```
-Menimport libary yang akan digunakan.
+Mengimport libary yang akan digunakan.
 
 ```ruby
 def english_to_indonesian_color(english_color):
