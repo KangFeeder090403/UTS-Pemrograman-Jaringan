@@ -5,6 +5,7 @@
 **NIM  : 1203220143**
 
 # CONTENT
+[HOW CODE WORK](https://github.com/KangFeeder090403/UTS-Pemrograman-Jaringan/tree/main?tab=readme-ov-file#how-code-work)
 
 
 
