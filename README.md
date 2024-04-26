@@ -4,11 +4,6 @@
 
 **NIM  : 1203220143**
 
-# CONTENT
-[HOW CODE WORK](https://github.com/KangFeeder090403/UTS-Pemrograman-Jaringan/tree/main?tab=readme-ov-file#how-code-work)
-
-- [Penjelasan Server.py](https://github.com/KangFeeder090403/UTS-Pemrograman-Jaringan/tree/main?tab=readme-ov-file#serverpy)
-
 
 
 
@@ -20,8 +15,7 @@ Buatlah sebuah permainan yang menggunakan soket dan protokol UDP. Permainannya c
 # **How Code Work?**
 Kode ini bekerja dengan menggunakan soket dan protokol UDP dalam bahasa _Python_. Server menggunakan konsep **(One to Many)** yang dimana server dapat melayani lebih dari 1 Client, dalam kasus ini server melayani 10 Client sekaligus ketika program server dijalankan. 
 
-Berikut adalah kode program dari Server.py:
-
+# Berikut adalah kode program dari Server.py berserta outputnya :
 ```ruby
 import socket
 import random
@@ -73,161 +67,9 @@ while True:
 server_socket.close()
 ```
 
+**OUTPUT**
 
-`server_ip = "127.0.0.1"` dan `server server_port = 12345` digunakan untuk menyimpan ip dan port
-
-
-
-# Penjelasan
-## Server.py
-
-```ruby
-import socket # Import sodket untuk membuat jaringan soket
-import time # Import modul time digunakan untuk mengirimkan warna baru setiap 10 detik dan 5 detik untuk merespons atau menjawab pertanyaan
-import threading # Import modul threading untuk membuat thread baru
-import random  # Import modul random untuk keperluan randomisasi
-import keyboard  # Import modul keyboard untuk deteksi input dari keyboard
-```
-Mengimport libary yang akan digunakan.
-
-```ruby
-def english_to_indonesian_color(english_color):
-    # Color mapping untuk terjemahan warna dari bahasa Inggris ke Indonesia
-    color_mapping = {
-        "red": "merah",
-        "green": "hijau",
-        "blue": "biru",
-        "yellow": "kuning",
-        "purple": "ungu",
-        "orange": "oranye",
-        "black": "hitam",
-        "white": "putih",
-        "brown": "coklat",
-        "pink": "merah muda",
-    }
-    return color_mapping.get(english_color.lower(), "tidak dikenali")
-```
-Definisikan `def english_to_indonesian_color(english_color):` yang akan menerjemahkan warna dalam bahasa inggris ke bahasa indonesia, Fungsi ini berkesinambungan denga fungsi `color_mapping = {
-"red": "merah",
-"green": "hijau",
-"blue": "biru",
-"yellow": "kuning",
-"purple": "ungu",
-"orange": "oranye",
-"black": "hitam",
-"white": "putih",
-"brown": "coklat",
-"pink": "merah muda",
-}
-return color_mapping.get(english_color.lower(), "tidak dikenali")` karena jika warna dalam bahasa inggris tidak ditemukan dalam penerjemah maka code akan mengembalikan   `return color_mapping.get(english_color.lower(), "tidak dikenali")`
-
-
-
-Berikut adalah kode dari salah satu program client.py:
-
-```ruby
-import socket
-import time
-import threading
-import random  # Import modul random untuk keperluan randomisasi
-import keyboard  # Import modul keyboard untuk deteksi input dari keyboard
-
-
-def english_to_indonesian_color(english_color):
-    # Color mapping untuk terjemahan warna dari bahasa Inggris ke Indonesia
-    color_mapping = {
-        "red": "merah",
-        "green": "hijau",
-        "blue": "biru",
-        "yellow": "kuning",
-        "purple": "ungu",
-        "orange": "oranye",
-        "black": "hitam",
-        "white": "putih",
-        "brown": "coklat",
-        "pink": "merah muda",
-    }
-    return color_mapping.get(english_color.lower(), "tidak dikenali")
-
-server_ip = "127.0.0.1"  # Ganti dengan alamat IP server
-server_port = 12345
-
-client_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-
-def input_with_timeout(prompt, timeout):
-    print(prompt, flush=True)
-    response = [None]  # Response will be stored here
-
-    def input_thread():
-        try:
-            response[0] = input()
-        except:
-            pass
-
-    thread = threading.Thread(target=input_thread)
-    thread.start()
-    thread.join(timeout)
-
-    if thread.is_alive():
-        print(f"\nAnda tidak menjawab selama {timeout} detik\n")
-        print("Tekan Enter untuk melanjutkan\n")
-        thread.join()
-        return None
-    else:
-        return response[0]
-
-try:
-    while True:
-        client_socket.sendto("request_color".encode("utf-8"), (server_ip, server_port))
-        color, server_address = client_socket.recvfrom(1024)
-        color = color.decode("utf-8")
-        print(f"Warna yang diterima: {color}")
-
-        indonesian_color = english_to_indonesian_color(color)
-        print(f"Jawaban yang benar: {indonesian_color}")
-
-        # Tentukan respons klien
-        if random.random() < 0.4:  # 40% kemungkinan jawaban salah
-            # Color mapping untuk jawaban yang salah
-            wrong_color_mapping = {
-                "merah muda": "coklat",
-                "biru": "hijau",
-                "hijau": "biru",
-                "ungu": "kuning",
-                "kuning": "ungu",
-                "hitam": "orange",
-                "oranye": "hitam",
-                "coklat": "putih",
-                "putih": "brown",
-                "merah": "pink",
-            }
-            response = wrong_color_mapping.get(indonesian_color.lower(), "tidak dikenali")
-        else:
-            response = indonesian_color  # Jawaban yang benar
-
-        print(f"Jawaban klien: {response}")
-
-        if response is not None:
-            if response.lower() == indonesian_color.lower():
-                print("Jawaban benar! Nilai feedback: 100")
-            else:
-                print("Jawaban salah. Nilai feedback: 0")
-        else:
-            print("Waktu habis. Nilai feedback: 0")
-
-        print("-" * 40)  # Garis pembatas antar respon
-        time.sleep(10)  # Tunggu 10 detik sebelum mengirim permintaan lagi
-
-        if keyboard.is_pressed('esc'):
-            print("\nKlient Berhenti.")
-            break
-
-except KeyboardInterrupt:
-    print("\nKlien berhenti.")
-finally:
-    client_socket.close()
-```
-
+![image](https://github.com/KangFeeder090403/UTS-Pemrograman-Jaringan/assets/112238835/ad9bdf4c-7c06-4a48-8c86-2dc98763873a)
 
 
 
