@@ -19,6 +19,9 @@ https://github.com/KangFeeder090403/UTS-Pemrograman-Jaringan/blob/main/README.md
 *  [ TEST CASE 1 Server 10 Client ](https://github.com/KangFeeder090403/UTS-Pemrograman-Jaringan/blob/main/README.md#1-serverpy-dan-10-clientpy)
 
 
+[Contoh Output berupa gambar dan vidio](https://github.com/KangFeeder090403/UTS-Pemrograman-Jaringan/tree/main/Gambar%20dan%20Vidio%20Output)
+
+
 
 
 
