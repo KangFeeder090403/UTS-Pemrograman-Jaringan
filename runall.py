@@ -12,8 +12,6 @@ def run_command_in_terminal(command):
     else:
         print("Unsupported platform")
 
-# List of commands you want to run in separate terminals
-# until client-10.py
 commands = [
     "python server.py",
     "python client.py",
@@ -28,7 +26,6 @@ commands = [
     "python client10.py",
 ]
 
-# Run each command in a separate terminal
 for command in commands:
     run_command_in_terminal(command)
-    time.sleep(1)  # Adjust delay as needed to allow terminals to open before running the next command
+    time.sleep(2) 
