@@ -15,6 +15,10 @@ https://github.com/KangFeeder090403/UTS-Pemrograman-Jaringan/blob/main/README.md
 
 
 [CONTOH PENGGUNAAN](https://github.com/KangFeeder090403/UTS-Pemrograman-Jaringan/blob/main/README.md#contoh-penggunaan-)
+* [ 1 Server 1 Client](https://github.com/KangFeeder090403/UTS-Pemrograman-Jaringan/blob/main/README.md#1-serverpy-dan-1-clientpy)
+*  [ 1 Server 10 Client](https://github.com/KangFeeder090403/UTS-Pemrograman-Jaringan/blob/main/README.md#1-serverpy-dan-10-clientpy)
+
+
 
 
 
